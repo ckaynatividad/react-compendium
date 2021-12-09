@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { getPokemon } from './services/pokemon';
 import Pokedex from './components/pokedex/pokedex';
 import Controls from './components/controls/controls';
+import Anime from 'react-anime';
 
 
 function App() {
@@ -32,9 +33,11 @@ function App() {
       {!loading && (
         <>
           <div className="poke">
-            <Controls query={query} setQuery={setQuery} setLoading={setLoading} sort={sort} setSort={setSort}
-            />
-            <Pokedex pokemon={pokemon} />
+            <Anime opacity={[0, 1]} translateY={'1em'} delay={(e, i) => i * 1000}>
+              <Controls query={query} setQuery={setQuery} setLoading={setLoading} sort={sort} setSort={setSort}
+              />
+              <Pokedex pokemon={pokemon} />
+            </Anime>
           </div>
         </>
       )}

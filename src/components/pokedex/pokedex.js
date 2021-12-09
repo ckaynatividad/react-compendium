@@ -1,11 +1,11 @@
 import React from 'react';
-
+import './pokedex.css';
 
 export default function Pokedex({ pokemon }) {
   return (
-    <div>
+    <div className="entire">
       {pokemon.map((poke) => (
-        <><p key={poke.id}>{poke.pokemon}</p><img src={poke.url_image}></img></>
+        <><div className="poke"><p key={poke.id}>{poke.pokemon}</p><img src={poke.url_image}></img></div></>
       ))}
     </div>
   );

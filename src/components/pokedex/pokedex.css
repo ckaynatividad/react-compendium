@@ -1,0 +1,15 @@
+.poke {
+  padding: 20px;
+  border: 1px solid black;
+  margin: 10px;
+}
+
+p {
+  font-size: 10pt;
+}
+
+.entire {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
