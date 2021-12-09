@@ -10,7 +10,7 @@ function App() {
   const [pokemon, setPokemon] = useState([]);
   const [loading, setLoading] = useState(true);
   const [query, setQuery] = useState('');
-  const [sort, setSort] = useState('arc');
+  const [sort, setSort] = useState('asc');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,12 +28,14 @@ function App() {
   return (
     <div className="App">
       <h1>Pokedex</h1>
-      {loading && <span className="loading"></span>}
+      {loading && <span className="lds-hourglass"></span>}
       {!loading && (
         <>
-          <Controls query={query} setQuery={setQuery} setLoading={setLoading} sort={sort} setSort={setSort}
-          />
-          <Pokedex pokemon={pokemon} />
+          <div className="poke">
+            <Controls query={query} setQuery={setQuery} setLoading={setLoading} sort={sort} setSort={setSort}
+            />
+            <Pokedex pokemon={pokemon} />
+          </div>
         </>
       )}
     </div>
