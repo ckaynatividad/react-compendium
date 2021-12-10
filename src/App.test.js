@@ -1,8 +1,10 @@
 import { render, screen } from '@testing-library/react';
+import Pokedex from './components/pokedex/pokedex';
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test('render pokemon from pokedex in app', () => {
+  const container = render(
+    <><App /><Pokedex pokemon={['venusaur', 'abra']} setLoading="false" setCurrentPage="1" /></> 
+  );
+  expect(container).toMatchSnapshot();
 });

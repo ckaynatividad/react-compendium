@@ -14,3 +14,13 @@ p {
   flex-direction: row;
   flex-wrap: wrap;
 }
+
+button {
+  width: fit-content;
+  height: fit-content;
+  margin: 2px;
+}
+
+.pages {
+  margin-top: 25%;
+}
